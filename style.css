@@ -144,19 +144,19 @@ svg{
 
 /*AVATAR*/
 
-.avatar-img{
+.avatar-img {
     float: left;
-    height: 600px;
-    width: 600px;
-    margin: 25px 25px;
+    width: 100%;
+    max-width: 600px; /* Tamaño máximo para pantallas grandes */
+    margin: 25px auto; /* Centra la imagen horizontalmente */
     margin-top: 40px;
 }
-    /*Aplicamos la propiedad object-fit cover, ajustar su tamaño y no perder la proporcion de nuestra imagen*/
 
-.avatar-img img{
-    object-fit: cover;
-    width:100%;
-    height:100%;
+.avatar-img img {
+    object-fit: cover; /* Asegura que la imagen cubra completamente el contenedor */
+    width: 100%; /* La imagen ocupará todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Añade bordes redondeados si es necesario */
 }
 
 /*BIOGRAPHY*/
@@ -177,4 +177,56 @@ svg{
 .container-bio{
     font-family: 'Times New Roman', Times, serif;
     font-size: 29px;
+}
+
+/* Responsive Styles */
+
+@media screen and (max-width: 1024px) {
+    .container-items {
+        width: 100%;
+        height: auto;
+    }
+
+    .bio-text {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .avatar-img {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container-principal {
+        flex-direction: column;
+    }
+
+    .container-items, .bio-text, .avatar-img {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .avatar-img {
+        max-width: 300px;
+    }
+
+    .container-bio {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container-items, .bio-text, .avatar-img {
+        width: 100%;
+    }
+
+    .bio-text {
+        font-size: 12px;
+    }
+
+    .container-bio {
+        font-size: 20px;
+    }
 }
