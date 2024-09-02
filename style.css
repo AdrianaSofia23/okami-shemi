@@ -195,6 +195,8 @@ svg{
     .avatar-img {
         width: 100%;
         max-width: 400px;
+        margin-left: 100px;
+        margin-right: auto;
     }
 }
 
@@ -210,6 +212,9 @@ svg{
 
     .avatar-img {
         max-width: 300px;
+        margin-left: 100px;
+        margin-right: auto;
+        margin-top: 40px;
     }
 
     .container-bio {
@@ -229,4 +234,85 @@ svg{
     .container-bio {
         font-size: 20px;
     }
+}
+
+
+/*SIDE-BAR (Mobile view)*/
+@media screen and (max-width: 768px) {
+    .container-items {
+        position: fixed;
+        top: 0;
+        left: -325px; /* Oculta la barra lateral fuera de la vista */
+        width: 280px;
+        height: 100%;
+        margin: 0;
+        padding: 20px;
+        background-color: #f7f7f7;
+        z-index: 1000;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* When the sidebar is active */
+    .container-items.active {
+        transform: translateX(325px); /* Mueve la barra lateral dentro de la vista */
+    }
+
+    /* Overlay to darken the main content when sidebar is open */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        display: none;
+    }
+
+    /* Show overlay when sidebar is active */
+    .overlay.active {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0; /* Ajuste el margen izquierdo del contenido principal */
+    }
+}
+
+/* General styling for menu-toggle button */
+.menu-toggle {
+    display: none; /* Oculta el botón por defecto */
+    position: fixed; /* Fija el botón en una posición específica en la pantalla */
+    top: 20px; /* Distancia desde la parte superior de la pantalla */
+    left: 20px; /* Distancia desde la parte izquierda de la pantalla */
+    background-color: #333; /* Color de fondo del botón */
+    color: white; /* Color del texto/icono */
+    border: none; /* Sin bordes */
+    padding: 10px 15px; /* Espaciado interno */
+    font-size: 18px; /* Tamaño del icono o texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    z-index: 2000; /* Asegura que esté por encima de otros elementos */
+}
+
+
+/* Ajustes para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        top: 15px;
+        left: 15px;
+    }
+}
+
+/* Opcional: Si prefieres que esté centrado */
+.menu-toggle.center {
+    left: 50%;
+    transform: translateX(-50%); /* Centra horizontalmente */
+}
+
+/* Mostrar los botones solo en dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Muestra el botón en dispositivos móviles */
+    }
+}
 }
