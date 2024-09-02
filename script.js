@@ -13,3 +13,18 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 });
+
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.container-items ').classList.toggle('active');
+    document.querySelector('.overlay').classList.toggle('active');
+});
+
+document.querySelector('.close-btn').addEventListener('click', function() {
+    document.querySelector('.container-items ').classList.remove('active');
+    document.querySelector('.overlay').classList.remove('active');
+});
+
+document.querySelector('.overlay').addEventListener('click', function() {
+    document.querySelector('.container-items ').classList.remove('active');
+    document.querySelector('.overlay').classList.remove('active');
+});
