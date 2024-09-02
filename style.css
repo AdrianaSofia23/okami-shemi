@@ -242,7 +242,7 @@ svg{
     .container-items {
         position: fixed;
         top: 0;
-        left: -325px; /* Oculta la barra lateral fuera de la vista */
+        left: -350px; /* Oculta la barra lateral fuera de la vista */
         width: 280px;
         height: 100%;
         margin: 0;
@@ -254,7 +254,7 @@ svg{
 
     /* When the sidebar is active */
     .container-items.active {
-        transform: translateX(325px); /* Mueve la barra lateral dentro de la vista */
+        transform: translateX(350px); /* Mueve la barra lateral dentro de la vista */
     }
 
     /* Overlay to darken the main content when sidebar is open */
