@@ -16,6 +16,10 @@ ul li a:hover {
     font-style: normal; 
 }
 
+img{
+    background-color: red;
+}
+
 /*CONTAINER PRINCIPAL*/
 
 .container-principal{
@@ -24,20 +28,23 @@ ul li a:hover {
 
 /*CONTAINER*/
 
-.container-items{
+.container-items {
     display: flex;
-    float: left;
+    flex-direction: column; /* Alinea los elementos en columna */
+    justify-content: space-between; /* Separa el contenido */
     height: 889px;
     width: 280px;
-    margin: 5px 5px;
-    flex-direction: column; /* Alinea los divs en una columna */
+    margin: 10px 8px;
+    float: left; /* Opcional, si es necesario en tu diseño */
 }
+
 
 /*SIDE-BAR*/
 
 .side-bar{
     margin-bottom: 30px; /* Añade un espacio de 20px debajo de cada div */
     margin-top: 30px; /* Añade un espacio de 20px debajo de cada div */
+    width: 280px;
 }
 
 .menu{
@@ -57,7 +64,7 @@ ul li{
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
-    padding-bottom: 15px; /* Añade un espacio de 10px dentro del elemento de la lista, debajo del contenido */
+    padding-bottom: 40px; /* Añade un espacio de 10px dentro del elemento de la lista, debajo del contenido */
 }
 
 svg{
@@ -99,11 +106,11 @@ svg{
 
 /*SOCIAL WRAP*/
 
-.social-wrap{
-    margin-top: 30px; /* Añade un espacio de 20px debajo de cada div */  
-    align-items: flex-start;
-    margin-left: 17px;
+.social-wrap {
+    margin-left: 15px; /* Mantiene el desplazamiento lateral */
+    /* Remueve margin-top para que lo controle Flexbox */
 }
+
 
 .footer{
     margin-bottom: 5px;
@@ -148,8 +155,9 @@ svg{
     float: left;
     width: 100%;
     max-width: 600px; /* Tamaño máximo para pantallas grandes */
-    margin: 25px auto; /* Centra la imagen horizontalmente */
-    margin-top: 40px;
+    margin: 50px auto; /* Centra la imagen horizontalmente */
+    margin-top: 100px;
+    margin-left: 35px;
 }
 
 .avatar-img img {
@@ -163,21 +171,37 @@ svg{
 
 .bio-text{
     float: left;
-    height: 889px;
-    width: 800px;
+    height: auto;
+    width: 920px;
     margin: 5px 5px;
     display: flex;
     font-size: 16px; /* Puedes usar px, em, rem, %, etc. */
-    line-height: 1.5; /* Ajusta el espaciado entre líneas */
+    line-height: 1.2; /* Ajusta el espaciado entre líneas */
     letter-spacing: 0.5px; /* Ajusta el espaciado entre caracteres */
-    margin-left: 20px;
+    margin-left: 60px;
+    margin-top: 25px;
 
 }
 
 .container-bio{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'evanescent.ttf';
+    font-size: 35px;
+}
+
+/* Define la fuente */
+@font-face {
+    font-family: 'evanescent.ttf';
+    src: url('Fonts/evanescent.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Aplica la fuente */
+body {
+    font-family: 'evanescent.ttf', sans-serif;
     font-size: 29px;
 }
+
 
 /* Responsive Styles */
 
@@ -212,7 +236,7 @@ svg{
 
     .avatar-img {
         max-width: 300px;
-        margin-left: 70px;
+        margin-left: 40px;
         margin-right: auto;
         margin-top: 55px;
     }
@@ -249,7 +273,7 @@ svg{
         padding: 20px;
         background-color: #f7f7f7;
         z-index: 1000;
-        transition: transform 0.3s ease-in-out;
+        transition: transform 0.13s ease-in-out, left 0.3s ease-in-out;
     }
 
     /* When the sidebar is active */
@@ -284,7 +308,7 @@ svg{
     display: none; /* Oculta el botón por defecto */
     position: fixed; /* Fija el botón en una posición específica en la pantalla */
     top: 20px; /* Distancia desde la parte superior de la pantalla */
-    left: 20px; /* Distancia desde la parte izquierda de la pantalla */
+    right: 20px; /* Distancia desde la parte izquierda de la pantalla */
     background-color: #333; /* Color de fondo del botón */
     color: white; /* Color del texto/icono */
     border: none; /* Sin bordes */
@@ -314,5 +338,4 @@ svg{
     .menu-toggle {
         display: block; /* Muestra el botón en dispositivos móviles */
     }
-}
 }
